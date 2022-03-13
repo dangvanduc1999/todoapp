@@ -25,6 +25,14 @@ export default function Todo({ name, prioriry, id, completed }) {
   const handleChangeValue = (e) => setValue(e.target.value);
   const handleChangePriority = (value) => setPriority(value);
   const handleClickUpdate = () => {
+    openNotificationWithIcon(
+      "warning",
+      "Nhăc nhở",
+      "Bạn phải nhập nội dung của todo"
+    );
+    if (!value.trim()) {
+      return null;
+    }
     dispatch(
       updateTodoAction({
         id,
