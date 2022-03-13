@@ -1,0 +1,32 @@
+.todo{
+   padding: 12px 5px;
+   border-radius: 10px;
+   border: 1px solid;
+   margin-bottom: 10px;
+   cursor: pointer;
+   .todo__control{
+      display: flex;
+      align-items: center;
+      &-update{
+         margin-left: 10px;
+         display: flex;
+         span:first-child{
+            margin-right: 10px;
+         }
+      }
+   }
+   .content__todo{
+      margin-bottom: 0;
+      display: block;
+      max-width: 300px;
+  	display: -webkit-box;
+  	-webkit-line-clamp: 2;
+  	-webkit-box-orient: vertical;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+   }
+   .ant-checkbox-wrapper{
+      display: flex;
+      align-items: center;
+   }
+}
