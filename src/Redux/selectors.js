@@ -3,13 +3,15 @@ export const todoListSelector = (state) => {
     return state.todoList.filter((todo) =>
       todo.title.includes(state.filters.search)
     );
+  } else if (state.filters.status === "completed") {
+    return state.todoList.filter(
+      (todo) =>
+        todo.title.includes(state.filters.search) && todo.completed === true
+    );
   } else {
     return state.todoList.filter(
       (todo) =>
-        todo.title.includes(state.filters.search) &&
-        (state.filters.status === "completed"
-          ? todo.completed === true
-          : todo.completed === false)
+        todo.title.includes(state.filters.search) && todo.completed === false
     );
   }
 };

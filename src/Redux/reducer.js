@@ -75,7 +75,7 @@ const todoReducer = (state = initialToDoState, action) => {
       return {
         ...state,
         filters: {
-          ...state.filter,
+          ...state.filters,
           search: payload
         }
       };
