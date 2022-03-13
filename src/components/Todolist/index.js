@@ -16,6 +16,14 @@ export default function TodoList() {
   const [piority, setPiority] = useState("Medium");
   //  =====  handleFunction=====
   const handleAddToDo = () => {
+    if (!todoAdd.trim()) {
+      openNotificationWithIcon(
+        "warning",
+        "Nhăc nhở",
+        "Bạn phải nhập nội dung của todo"
+      );
+      return null;
+    }
     dispatch(
       addTodoAction({
         todo: {
